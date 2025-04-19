@@ -1,7 +1,9 @@
 <template>
-  <div v-if="loading">Загрузка...</div>
-  <div v-else-if="error">{{ error }}</div>
-  <HomeViewProductGrid v-else :products="products" />
+  <main class="container">
+    <div v-if="loading">Загрузка...</div>
+    <div v-else-if="error">{{ error }}</div>
+    <HomeViewProductGrid v-else :products="products" />
+  </main>
 </template>
 
 <script setup lang="ts">
@@ -12,4 +14,4 @@ const { products, loading, error } = useProducts(1)
 
 </script>
 
-<style scoped></style>
+<style src="./HomeView.css" scoped></style>
