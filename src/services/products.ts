@@ -1,15 +1,10 @@
 import ProductMockPreviewImage from './../assets/product/product-mock-preview-image.webp'
 
-export interface Product {
-  image: string;
-  title: string;
-  productId: string;
-  favorite: boolean;
-}
+import type { IProduct } from '@/interfaces';
 
 const PRODUCTS_COUNT = 100
 
-export function getProducts(page: number, pageSize: number = 12): Promise<Product[]> {
+export function getProducts(page: number, pageSize: number = 12): Promise<IProduct[]> {
   return new Promise((resolve) => {
     setTimeout(() => {
       const startIndex = page * pageSize;

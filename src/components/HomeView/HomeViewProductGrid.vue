@@ -1,11 +1,19 @@
 <template>
   <div class="product-grid">
-    <div v-for="(product, index) in props.products" :key="index">{{ product }}</div>
+    <HomeViewProductCard
+      v-for="(product, index) in props.products"
+      :key="index"
+      :product="product"
+    />
   </div>
 </template>
 
 <script setup lang="ts">
-const props = defineProps<{ products: [] }>();
+import HomeViewProductCard from './HomeViewProductCard.vue';
+
+import type { IProduct } from '@/interfaces';
+
+const props = defineProps<{ products: IProduct[] }>()
 </script>
 
 <style src="./HomeViewProductGrid.css" scoped></style>
