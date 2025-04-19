@@ -1,5 +1,6 @@
 import { ref } from 'vue'
 import { getProducts, getProductsCount } from '@/services/products'
+import { PAGINATION } from '@/config/pagination'
 
 import type { IProduct } from '@/interfaces'
 
@@ -7,7 +8,7 @@ import type { IProduct } from '@/interfaces'
  * Composable для загрузки списка товаров и общего количества
  * @param initialPage - стартовая страница (по умолчанию 1)
  */
-export function useProducts(initialPage = 1) {
+export function useProducts(initialPage = PAGINATION.initialPage) {
   const products = ref<IProduct[]>([])
   const totalCount = ref<number>(0)
   const loading = ref<boolean>(false)
@@ -21,7 +22,7 @@ export function useProducts(initialPage = 1) {
     loading.value = true
     error.value = null
     try {
-      products.value = await getProducts(page)
+      products.value = await getProducts(page, PAGINATION.pageSize)
       totalCount.value = await getProductsCount()
     } catch (e: unknown) {
       error.value = e instanceof Error ? e.message : 'Не удалось загрузить товары';
