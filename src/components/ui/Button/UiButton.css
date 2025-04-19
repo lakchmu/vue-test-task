@@ -1,4 +1,24 @@
+.base-button:focus-visible {
+  background-color: #2B6BE2;
+  outline: 2px solid #FF0000;
+  outline-offset: -2px;
+}
+
+.base-button:active {
+  background-color: #2560CD;
+}
+
+.base-button:hover {
+  background-color: #2B6BE2;
+}
+
+.base-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.8;
+}
+
 .base-button {
+  cursor: pointer;
   background-color: #2A6DEA;
   color: #FFFFFF;
   font-weight: 600;
@@ -10,4 +30,5 @@
   padding: 8px 16px;
   border-radius: 12px;
   border: none;
+  opacity: 1;
 }
