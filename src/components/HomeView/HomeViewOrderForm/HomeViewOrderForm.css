@@ -1,0 +1,45 @@
+.order-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.order-form__content,
+.order-form__actions {
+  padding: 24px;
+}
+
+.order-form__content {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.order-form__field {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 16px;
+}
+
+.order-form__field label {
+  font-weight: 600;
+  font-size: 24px;
+  margin-bottom: 10px;
+  line-height: 28px;
+  height: 28px;
+}
+
+.order-form__field input {
+  padding: 8px 16px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  font-size: 24px;
+  color: #000;
+  height: 44px;
+  line-height: 44px;
+  width: 100%;
+}
+
+.order-form__field input:focus-visible {
+  outline: 2px solid #FF0000;
+  outline-offset: -2px;
+}
