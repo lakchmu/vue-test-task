@@ -5,7 +5,7 @@
       <div class="product-card__title">
         {{ product.title }}
       </div>
-      <UiButton>Купить</UiButton>
+      <UiButton @click="$emit('buy', product)">Купить</UiButton>
     </div>
   </div>
 </template>
@@ -16,6 +16,7 @@ import { UiButton } from '@/components/ui'
 import type { IProduct } from '@/interfaces'
 
 const { product } = defineProps<{ product: IProduct }>()
+defineEmits<{ (e: 'buy', product: IProduct): void }>()
 </script>
 
 <style src="./HomeViewProductCard.css" scoped></style>

@@ -23,7 +23,7 @@ export function useProducts(initialPage = PAGINATION.initialPage) {
     error.value = null
     try {
       products.value = await getProducts(page, PAGINATION.pageSize)
-      totalCount.value = await getProductsCount()
+      totalCount.value = getProductsCount()
     } catch (e: unknown) {
       error.value = e instanceof Error ? e.message : 'Не удалось загрузить товары'
     } finally {
