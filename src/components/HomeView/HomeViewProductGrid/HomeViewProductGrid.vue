@@ -9,9 +9,9 @@
 </template>
 
 <script setup lang="ts">
-import HomeViewProductCard from './HomeViewProductCard.vue';
+import { HomeViewProductCard } from '@/components/HomeView'
 
-import type { IProduct } from '@/interfaces';
+import type { IProduct } from '@/interfaces'
 
 const props = defineProps<{ products: IProduct[] }>()
 </script>

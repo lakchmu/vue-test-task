@@ -8,18 +8,21 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 
-import UiButton from '@/components/ui/Button/UiButton.vue'
+import { UiButton } from '@/components/ui'
 import { PAGINATION } from '@/config/pagination'
 
-const props = withDefaults(defineProps<{
-  page: number
-  totalItems: number
-  initialPage?: number
-  pageSize?: number
-}>(), {
-  initialPage: PAGINATION.initialPage,
-  pageSize: PAGINATION.pageSize,
-});
+const props = withDefaults(
+  defineProps<{
+    page: number
+    totalItems: number
+    initialPage?: number
+    pageSize?: number
+  }>(),
+  {
+    initialPage: PAGINATION.initialPage,
+    pageSize: PAGINATION.pageSize,
+  },
+)
 
 const emit = defineEmits<{
   (e: 'update:page', value: number): void

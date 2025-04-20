@@ -10,12 +10,11 @@
 <script setup lang="ts">
 import { watch } from 'vue'
 
-import HomeViewProductGrid from '@/components/HomeView/HomeViewProductGrid.vue'
+import { HomeViewProductGrid, HomeViewPagination } from '@/components/HomeView'
 import { useProducts } from '@/composables/useProducts'
 import { PAGINATION } from '@/config/pagination'
-import HomeViewPagination from '@/components/HomeView/HomeViewPagination/HomeViewPagination.vue'
 
-const currentPage = defineModel({ default: PAGINATION.initialPage });
+const currentPage = defineModel({ default: PAGINATION.initialPage })
 
 const { products, totalCount, loading, error, loadPage } = useProducts()
 

@@ -6,7 +6,7 @@ import type { IProduct } from '@/interfaces'
 
 /**
  * Composable для загрузки списка товаров и общего количества
- * @param initialPage - стартовая страница (по умолчанию 1)
+ * @param initialPage - стартовая страница
  */
 export function useProducts(initialPage = PAGINATION.initialPage) {
   const products = ref<IProduct[]>([])
@@ -25,7 +25,7 @@ export function useProducts(initialPage = PAGINATION.initialPage) {
       products.value = await getProducts(page, PAGINATION.pageSize)
       totalCount.value = await getProductsCount()
     } catch (e: unknown) {
-      error.value = e instanceof Error ? e.message : 'Не удалось загрузить товары';
+      error.value = e instanceof Error ? e.message : 'Не удалось загрузить товары'
     } finally {
       loading.value = false
     }

@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import UiButton from '../ui/Button/UiButton.vue';
+import { UiButton } from '@/components/ui'
 
 import type { IProduct } from '@/interfaces'
 
