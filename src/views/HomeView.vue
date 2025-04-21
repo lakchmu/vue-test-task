@@ -32,7 +32,7 @@ const currentPage = defineModel({ default: PAGINATION.initialPage })
 
 const { products, totalCount, loading, error, loadPage } = useProducts()
 
-const selectedProduct = ref<IProduct | null>(null)
+const selectedProduct = ref<IProduct>()
 const isOrderOpen = ref(false)
 const isConfirmationOpen = ref(false)
 
@@ -62,4 +62,4 @@ watch(isConfirmationOpen, (newValue) => {
 })
 </script>
 
-<style src="./HomeView.css" scoped></style>
+<style src="./HomeView.css" scoped />

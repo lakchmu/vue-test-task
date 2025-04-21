@@ -37,4 +37,4 @@ function goTo(newPage: number) {
 }
 </script>
 
-<style src="./HomeViewPagination.css" scoped></style>
+<style src="./HomeViewPagination.css" scoped />

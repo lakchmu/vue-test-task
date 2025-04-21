@@ -116,4 +116,4 @@ onBeforeUnmount(() => {
 })
 </script>
 
-<style src="./UiPopup.css" scoped></style>
+<style src="./UiPopup.css" scoped />

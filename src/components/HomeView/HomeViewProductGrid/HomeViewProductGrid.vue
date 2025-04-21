@@ -35,4 +35,4 @@ defineEmits<{ (e: 'buy', product: IProduct): void }>()
 const { toggle, isFavorite } = useFavorites()
 </script>
 
-<style src="./HomeViewProductGrid.css" scoped></style>
+<style src="./HomeViewProductGrid.css" scoped />

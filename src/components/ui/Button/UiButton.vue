@@ -10,4 +10,4 @@ interface IButton {
 const { nativeType, disabled } = defineProps<IButton>()
 </script>
 
-<style src="./UiButton.css" scoped></style>
+<style src="./UiButton.css" scoped />

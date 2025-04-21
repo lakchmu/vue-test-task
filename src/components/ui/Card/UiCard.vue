@@ -17,4 +17,4 @@
   </div>
 </template>
 
-<style src="./UiCard.css" scoped></style>
+<style src="./UiCard.css" scoped />

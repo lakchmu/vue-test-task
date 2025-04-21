@@ -28,7 +28,7 @@ export function getProducts(page: number, pageSize: number = 12): Promise<IProdu
         }
       })
 
-      resolve(products) // TODO
+      resolve(products)
     }, 200)
   })
 }
