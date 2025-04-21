@@ -6,6 +6,10 @@ import { ref, watch } from 'vue'
 
 const favorites = ref<Set<string>>(new Set())
 
+export function initFavorites(initialIds: string[]) {
+  favorites.value = new Set(initialIds)
+}
+
 watch(
   favorites,
   (set) => {
