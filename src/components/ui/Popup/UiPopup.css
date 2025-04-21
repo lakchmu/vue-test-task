@@ -12,9 +12,9 @@
 
 .ui-popup-content {
   background: #fff;
-  border-radius: 8px;
+  border-radius: 1rem;
   box-shadow: 0 4px 20px rgba(16, 25, 69, 0.05);
-  max-width: 600px;
+  max-width: 75rem;
   width: 100%;
   max-height: 90vh;
   display: flex;
@@ -23,25 +23,25 @@
 }
 
 .ui-popup-header {
-  padding: 24px 24px 0;
+  padding: 3rem 3rem 0;
   display: flex;
   justify-content: space-between;
   align-items: start;
 }
 
 .ui-popup-title {
-  font-size: 40px;
+  font-size: 5rem;
   font-weight: 700;
   color: #000;
-  line-height: 47px;
-  height: 47px;
+  line-height: 5.875rem;
+  height: 5.875rem;
   vertical-align: top;
 }
 
 .ui-popup-close {
   cursor: pointer;
-  margin-top: -8px;
-  margin-right: -8px;
+  margin-top: -1rem;
+  margin-right: -1rem;
 }
 
 .ui-popup-close:focus-visible {

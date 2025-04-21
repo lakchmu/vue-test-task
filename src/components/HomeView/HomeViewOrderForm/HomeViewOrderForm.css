@@ -5,37 +5,37 @@
 
 .order-form__content,
 .order-form__actions {
-  padding: 24px;
+  padding: 3rem;
 }
 
 .order-form__content {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 1.25rem;
 }
 
 .order-form__field {
   display: flex;
   flex-direction: column;
-  padding: 8px 16px;
+  padding: 1rem 2rem;
 }
 
 .order-form__field label {
   font-weight: 600;
-  font-size: 24px;
-  margin-bottom: 10px;
-  line-height: 28px;
-  height: 28px;
+  font-size: 3rem;
+  margin-bottom: 1.25rem;
+  line-height: 3.5rem;
+  height: 3.5rem;
 }
 
 .order-form__field input {
-  padding: 8px 16px;
+  padding: 1rem 2rem;
   border: 1px solid #000;
-  border-radius: 4px;
-  font-size: 24px;
+  border-radius: 0.5rem;
+  font-size: 3rem;
   color: #000;
-  height: 44px;
-  line-height: 44px;
+  height: 5.5rem;
+  line-height: 5.5rem;
   width: 100%;
 }
 
