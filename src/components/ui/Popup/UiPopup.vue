@@ -37,8 +37,10 @@
 </template>
 
 <script setup lang="ts">
-import { IconClose } from '@/components/icon'
 import { ref, watch, onMounted, onBeforeUnmount, nextTick, defineProps, defineEmits } from 'vue'
+
+import { IconClose } from '@/components/icon'
+import { useFocusStack } from '@/composables/useFocusStack'
 
 type Props = {
   title: string
@@ -48,8 +50,8 @@ type Props = {
 const props = withDefaults(defineProps<Props>(), { hasClose: true })
 const emit = defineEmits<{ (e: 'update:open', value: boolean): void }>()
 
+const { push, pop } = useFocusStack()
 const content = ref<HTMLElement | null>(null)
-let previouslyFocused: HTMLElement | null = null
 
 function close() {
   emit('update:open', false)
@@ -96,12 +98,13 @@ watch(
   () => props.open,
   async (visible) => {
     if (visible) {
+      push(document.activeElement as HTMLElement)
       document.body.style.overflow = 'hidden'
-      previouslyFocused = document.activeElement as HTMLElement
       await nextTick()
       content.value?.focus()
     } else {
       document.body.style.overflow = ''
+      const previouslyFocused = pop()
       previouslyFocused?.focus()
     }
   }

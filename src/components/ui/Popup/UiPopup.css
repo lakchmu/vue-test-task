@@ -17,6 +17,7 @@
   max-width: 75rem;
   width: 100%;
   max-height: 90vh;
+  overflow: scroll;
   display: flex;
   flex-direction: column;
   outline: none;
