@@ -1,4 +1,4 @@
-import { ref, computed, watch } from 'vue'
+import { ref, watch } from 'vue'
 
 /**
  * Composable для сохранения товаров в избранное
@@ -15,16 +15,15 @@ watch(
 )
 
 export function useFavorites() {
-  function toggleFavorite(id: string) {
+  const toggle = (id: string) => {
     if (favorites.value.has(id)) {
       favorites.value.delete(id)
     } else {
       favorites.value.add(id)
     }
   }
-  function isFavorite(id: string) {
-    return computed(() => favorites.value.has(id))
-  }
 
-  return { toggleFavorite, isFavorite }
+  const isFavorite = (id: string) => favorites.value.has(id);
+
+  return { toggle, isFavorite }
 }

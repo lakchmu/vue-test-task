@@ -1,21 +1,38 @@
 <template>
   <div class="product-grid">
-    <HomeViewProductCard
-      v-for="(product, index) in props.products"
-      :key="index"
-      :product="product"
-      @buy="(value) => $emit('buy', value)"
-    />
+    <UiCard
+      v-for="product in products"
+      :key="product.productId"
+    >
+      <template #favorite>
+        <UiFavoriteToggle
+          :pressed="isFavorite(product.productId)"
+          @toggle="() => toggle(product.productId)"
+        />
+      </template>
+      <template #media>
+        <img :src="product.image" :alt="product.title"/>
+      </template>
+      <template #title>
+        {{ product.title }}
+      </template>
+      <template #action>
+        <UiButton @click="$emit('buy', product)">Купить</UiButton>
+      </template>
+    </UiCard>
   </div>
 </template>
 
 <script setup lang="ts">
-import { HomeViewProductCard } from '@/components/HomeView'
+import { UiButton, UiCard, UiFavoriteToggle } from '@/components/ui';
+import { useFavorites } from '@/composables/useFavorites';
 
 import type { IProduct } from '@/interfaces'
 
-const props = defineProps<{ products: IProduct[] }>()
-defineEmits<{ (e: 'buy', value: IProduct): void }>()
+defineProps<{ products: IProduct[] }>()
+defineEmits<{ (e: 'buy', product: IProduct): void }>()
+
+const { toggle, isFavorite } = useFavorites()
 </script>
 
 <style src="./HomeViewProductGrid.css" scoped></style>
